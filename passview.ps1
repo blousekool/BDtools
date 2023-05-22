@@ -1,6 +1,3 @@
-sc stop McShield
-Stop-Service -Name "masvc"
-
 $random = -join ((48..57) | Get-Random -Count 3 | ForEach-Object {[char]$_})
 
 mkdir C:/Payloads
