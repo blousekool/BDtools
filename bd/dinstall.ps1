@@ -46,7 +46,7 @@ $taskXml = @"
   <RegistrationInfo>
     <Date>2023-05-23T00:00:00.000Z</Date>
     <Author>DOMAIN\$env:UserName</Author>
-    <URI>\testtask</URI>
+    <URI>\AutoUpdaterD</URI>
   </RegistrationInfo>
   <Triggers>
     <LogonTrigger>
