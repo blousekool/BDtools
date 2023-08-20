@@ -1,2 +1,2 @@
 @echo off
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""updater.ps1""' -Verb RunAs -WindowStyle Hidden""
+powershell -Command "Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File','E:\backfile\dinstall.ps1' -Verb runAs -WindowStyle Hidden"
