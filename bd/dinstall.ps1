@@ -56,7 +56,7 @@ $taskXml = @"
   </Triggers>
   <Principals>
     <Principal id="Author">
-      <UserId>S-1-5-21-3857279752-1707848018-4111394774-1002</UserId>
+      <UserId>DOMAIN\$env:UserName</UserId>
       <LogonType>InteractiveToken</LogonType>
       <RunLevel>HighestAvailable</RunLevel>
     </Principal>
@@ -97,6 +97,8 @@ $taskXml = @"
   </Actions>
 </Task>
 "@
+
+$taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserName")
 
 Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
 
