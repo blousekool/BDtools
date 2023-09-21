@@ -55,6 +55,10 @@ $taskXml = @"
     <LogonTrigger>
       <Enabled>true</Enabled>
     </LogonTrigger>
+    <SessionStateChangeTrigger>
+      <Enabled>true</Enabled>
+      <StateChange>SessionUnlock</StateChange>
+    </SessionStateChangeTrigger>
   </Triggers>
   <Principals>
     <Principal id="Author">
