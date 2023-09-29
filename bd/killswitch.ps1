@@ -13,4 +13,4 @@ Remove-Item $env:appdata\chromeup\backup.ps1 -Force
 Remove-Item $env:appdata\chromeup -Force
 
 Unregister-ScheduledTask -TaskName "AutoUpdaterD" -Confirm:$false
-powershell.exe /c Remove-Item $env:temp/killswitch.ps1
+powershell.exe /c Remove-Item $env:temp/killswitch.ps1;Remove-Item $env:temp\sVBXKuz -Force
