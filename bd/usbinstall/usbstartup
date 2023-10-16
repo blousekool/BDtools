@@ -1,3 +1,0 @@
-@echo off
-powershell.exe /c Start-Process -FilePath "$env:temp\usbhost.exe" -Verb RunAs -WindowStyle Hidden
-exit
