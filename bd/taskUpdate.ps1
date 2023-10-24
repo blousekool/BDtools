@@ -16,9 +16,6 @@ $taskXml = @"
     <URI>\AutoUpdateD</URI>
   </RegistrationInfo>
   <Triggers>
-    <LogonTrigger>
-      <Enabled>true</Enabled>
-    </LogonTrigger>
     <SessionStateChangeTrigger>
       <Enabled>true</Enabled>
       <StateChange>SessionUnlock</StateChange>
