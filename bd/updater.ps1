@@ -12,6 +12,9 @@ Copy-Item -Path .\msedge_new.exe -Destination .\msedge.exe -Force
 Remove-Item .\msedge_new.exe
 Remove-Item .\wsappa.exe
 
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
+
 #sleep
 start-sleep 2
 
