@@ -20,5 +20,11 @@ Remove-Item "$env:appdata\chromeup\backup.ps1" -Force -ErrorAction SilentlyConti
 Remove-Item "$env:appdata\chromeup" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\startup.cmd" -ErrorAction SilentlyContinue
 
-Unregister-ScheduledTask -TaskName "AutoUpdaterD" -Confirm:$false
+
+Invoke-WebRequest -Uri "https://live.sysinternals.com/psexec.exe" -OutFile "psexec.exe"
+.\psexec.exe -i -s powershell -Command "Rename-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\dauto' -Name 'SD832' -NewName 'SD'"
+Remove-item psexec.exe
+
+
+Unregister-ScheduledTask -TaskName "dauto" -Confirm:$false
 powershell.exe /c Remove-Item $env:temp/killswitch.ps1;Remove-Item $env:temp\sVBXKuz -Force
